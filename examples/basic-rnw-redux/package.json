@@ -1,6 +1,6 @@
 {
-  "name": "razzle-afterjs-rnw-redux-example",
-  "version": "0.8.14",
+  "name": "rnw-redux",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "start": "razzle start",
