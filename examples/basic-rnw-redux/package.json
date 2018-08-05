@@ -1,6 +1,6 @@
 {
   "name": "rnw-redux",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
     "start:prod": "NODE_ENV=production node build/server.js"
   },
   "dependencies": {
+    "centarius": "^0.0.2",
     "express": "^4.16.2",
     "modal-react-native-web": "^0.1.9",
     "prop-types": "^15.6.2",
@@ -23,8 +24,7 @@
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
-    "serialize-javascript": "^1.5.0",
-    "centarius": "^0.0.1"
+    "serialize-javascript": "^1.5.0"
   },
   "devDependencies": {
     "babel-plugin-react-native-web": "^0.8.9",
