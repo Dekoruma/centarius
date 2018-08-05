@@ -1,0 +1,64 @@
+{
+  "name": "@centarius/react-loadable",
+  "version": "0.0.1",
+  "description": "React Loadable HOC for Centarius",
+  "main": "dist/cjs/index.js",
+  "module": "dist/index.js",
+  "repository": "https://github.com/rayandrews/centarius/tree/master/packages/react-loadable",
+  "author": {
+    "name": "Ray Andrew",
+    "email": "raydreww@gmail.com",
+    "url": "https://github.com/rayandrews"
+  },
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "react",
+    "react-native",
+    "react-native-web",
+    "centarius",
+    "react-hoc",
+    "hoc",
+    "react-loadable",
+    "code-splitting",
+    "react-context",
+    "provider",
+    "consumer"
+  ],
+  "scripts": {
+    "build": "taskr release",
+    "build-dev": "taskr",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@babel/core": "7.0.0-beta.55",
+    "@babel/plugin-proposal-class-properties": "7.0.0-beta.55",
+    "@babel/plugin-proposal-object-rest-spread": "7.0.0-beta.55",
+    "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.55",
+    "@babel/plugin-transform-react-jsx-source": "7.0.0-beta.55",
+    "@babel/plugin-transform-runtime": "7.0.0-beta.55",
+    "@babel/preset-env": "7.0.0-beta.55",
+    "@babel/preset-react": "7.0.0-beta.55",
+    "@babel/runtime": "7.0.0-beta.55",
+    "@babel/template": "7.0.0-beta.55",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.14",
+    "centarius": "0.0.1",
+    "hoist-non-react-statics": "^2.5.5",
+    "react-loadable": "^5.4.0"
+  },
+  "devDependencies": {
+    "@taskr/babel": "1.1.0-next.1",
+    "@taskr/clear": "1.1.0",
+    "@taskr/esnext": "1.1.0",
+    "@taskr/watch": "1.1.0",
+    "taskr": "1.1.0"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.x.x",
+    "react": "16.x.x",
+    "react-router-dom": "^4.x.x"
+  }
+}

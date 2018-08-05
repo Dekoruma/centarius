@@ -1,0 +1,39 @@
+{
+  "presets": [
+    "razzle/babel", ["env", {
+      "targets": {
+        "node": 6
+      }
+    }]
+  ],
+  "plugins": [
+    "loadable-components/babel", ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "build": "./build/",
+        "app": "./src/app",
+        "config": "./src/config",
+        "actions": "./src/app/actions",
+        "components": "./src/app/components",
+        "constants": "./src/app/constants",
+        "containers": "./src/app/containers",
+        "helpers": "./src/app/helpers",
+        "reducers": "./src/app/reducers",
+        "selectors": "./src/app/selectors",
+        "store": "./src/app/store",
+        "api": "./src/server/api",
+        "react-native": "react-native-web"
+      }
+    }],
+    "transform-decorators-legacy", ["lodash", {
+      "id": ["lodash", "recompose"]
+    }]
+  ],
+  "env": {
+    "node": {
+      "plugins": [
+        "dynamic-import-node"
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "presets": [
+    "razzle/babel"
+  ],
+  "plugins": [
+    "react-loadable/babel", ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "build": "./build/",
+        "app": "./src/app",
+        "config": "./src/config",
+        "actions": "./src/app/actions",
+        "components": "./src/app/components",
+        "constants": "./src/app/constants",
+        "containers": "./src/app/containers",
+        "helpers": "./src/app/helpers",
+        "reducers": "./src/app/reducers",
+        "selectors": "./src/app/selectors",
+        "store": "./src/app/store",
+        "api": "./src/server/api",
+        "react-native": "react-native-web"
+      }
+    }],
+    ["lodash", {
+      "id": ["lodash", "recompose"]
+    }]
+  ]
+}

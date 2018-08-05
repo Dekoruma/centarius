@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true
+  },
+  "include": [
+    "packages/**/*"
+  ],
+  "exclude": [
+    "examples/**/*",
+    "node_modules/**/*"
+  ]
+}
