@@ -838,7 +838,7 @@ export default server;
 
 | Package | Version | Dependencies | Description |
 |--------|:-------:|:------------:|-----------|
-| [`centarius`](/packages/centarius) | [![npm](https://img.shields.io/centarius/v/taskr.svg?maxAge=86400)](https://www.npmjs.com/package/centarius) | [![Dependency Status](https://david-dm.org/rayandrews/centarius.svg?path=packages/centarius)](https://david-dm.org/rayandrews/centarius?path=packages/centarius) | Core package. _Required_ |
+| [`centarius`](/packages/centarius) | [![npm](https://img.shields.io/npm/v/centarius.svg?maxAge=86400)](https://www.npmjs.com/package/centarius) | [![Dependency Status](https://david-dm.org/rayandrews/centarius.svg?path=packages/centarius)](https://david-dm.org/rayandrews/centarius?path=packages/centarius) | Core package. _Required_ |
 | [`@centarius/state-hoc`](/packages/state-hoc) | [![npm](https://img.shields.io/npm/v/@centarius/state-hoc.svg?maxAge=86400)](https://www.npmjs.com/package/@centarius/state-hoc) | [![Dependency Status](https://david-dm.org/rayandrews/centarius.svg?path=packages/state-hoc)](https://david-dm.org/rayandrews/centarius?path=packages/state-hoc) | State HOC for Centarius |
 | [`@centarius/react-loadable`](/packages/react-loadable) | [![npm](https://img.shields.io/npm/v/@centarius/react-loadable.svg?maxAge=86400)](https://www.npmjs.com/package/@centarius/react-loadable) | [![Dependency Status](https://david-dm.org/rayandrews/centarius.svg?path=packages/react-loadable)](https://david-dm.org/rayandrews/centarius?path=packages/reactloadable) | React Loadable HOC for Centarius |
 

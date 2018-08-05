@@ -47,9 +47,10 @@
     "@babel/preset-react": "7.0.0-beta.55",
     "@babel/runtime": "7.0.0-beta.55",
     "@babel/template": "7.0.0-beta.55",
+    "babel-plugin-add-module-exports": "^0.3.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.14",
     "centarius": "^0.0.4",
-    "hoist-non-react-statics": "^2.5.5",
+    "hoist-non-react-statics": "^3.0.1",
     "react-loadable": "^5.4.0"
   },
   "devDependencies": {
