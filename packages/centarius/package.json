@@ -19,6 +19,9 @@
     "document.js",
     "server.js"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "react",
     "react-native",
