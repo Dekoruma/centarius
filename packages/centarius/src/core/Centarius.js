@@ -150,8 +150,6 @@ class Centarius extends Component {
     const { location, routes } = this.props;
     const initialData = this.prefetcherCache[location.pathname] || data;
 
-    console.log(restState);
-
     return (
       <Provider value={restState}>
         {renderRoutes(routes, {
