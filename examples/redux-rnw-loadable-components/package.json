@@ -1,6 +1,6 @@
 {
   "name": "redux-rnw-loadable-components",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -16,8 +16,8 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
-    "@centarius/state-hoc": "^0.0.4",
-    "centarius": "^0.0.4",
+    "@centarius/state-hoc": "^0.0.5",
+    "centarius": "^0.0.5",
     "cross-fetch": "^2.2.1",
     "downshift": "^2.0.10",
     "express": "^4.15.2",
