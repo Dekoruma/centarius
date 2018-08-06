@@ -126,6 +126,8 @@ the client and the server (same like After)
 * `history: object`: React Router 4's `history` object.
 * `location: object`: (client-only) React Router 4's `location` object.
 * `isServer: boolean`: Check whether code is running on server or client
+* `query: object`: Parsed query string from url
+* `params: object`: Parsed param object from React Router
 
 __You can also add another variable to be passed into static method like Redux Store, etc.__
 

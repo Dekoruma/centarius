@@ -17,7 +17,7 @@ import isEmpty from 'lodash.isempty';
 import { isPromise, initRedirect, isResSent } from '../core/utils';
 
 import getOptions from '../core/getOptions';
-import loadInitialProps from '../core/loadInitialProps';
+import loadInitialProps, { matchRoutes } from '../core/loadInitialProps';
 
 import Centarius from '../core/Centarius';
 

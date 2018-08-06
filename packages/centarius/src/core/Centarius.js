@@ -10,6 +10,7 @@ import React, { Component } from 'react';
 import withRouter from 'react-router-dom/withRouter';
 import PropTypes from 'prop-types';
 
+import { parse } from 'qs';
 import renderRoutes from './renderRoutes';
 import loadInitialProps from './loadInitialProps';
 import getOptions from './getOptions';
@@ -78,12 +79,16 @@ class Centarius extends Component {
           () => beforeNavigating(null, this.state)
         );
 
+        const query = parse(location.search, { ignoreQueryPrefix: true });
+
         const { data: dataProps } = await loadInitialProps(
           routes,
           this.state.location.pathname,
           {
             ...restProps,
             ...options,
+            params: match.params || {},
+            query,
             location,
             history,
           }

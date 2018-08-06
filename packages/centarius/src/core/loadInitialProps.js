@@ -6,6 +6,8 @@
  * With some changes by Ray Andrew (@rayandrews) <raydreww@gmail.com>
  */
 
+import isEmpty from 'lodash.isempty';
+
 import matchPath from 'react-router-dom/matchPath';
 import Router from 'react-router-dom/Router';
 
@@ -16,6 +18,7 @@ import {
   isLoadable,
   isReactLoadable,
   cleanPath,
+  emptyObject,
 } from './utils';
 
 // ensure we're using the exact code for default root match
@@ -110,8 +113,20 @@ export const matchRoutes = (
 export default async function loadInitialProps(routes, pathname, ctx) {
   const branches = matchRoutes(routes, pathname);
 
+  const lastBranch = last(branches);
+
+  /* eslint-disable */
+  const ctxModified = ctx.isServer
+    ? {
+        ...ctx,
+        query: ctx.req.query,
+        params: isEmpty(lastBranch.match) ? lastBranch.match.path : emptyObject,
+      }
+    : ctx;
+  /* eslint-enable */
+
   const promises = branches.map(({ route }) =>
-    getInitialData(route.component, ctx)
+    getInitialData(route.component, ctxModified)
   );
 
   const data = await Promise.all(promises);

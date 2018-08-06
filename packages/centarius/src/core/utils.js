@@ -1,3 +1,5 @@
+export const emptyObject = Object.freeze({});
+
 export const isResSent = (res) => res.finished || res.headersSent;
 
 export const noop = () => {};
