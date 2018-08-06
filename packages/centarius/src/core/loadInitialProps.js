@@ -19,6 +19,7 @@ import {
   isReactLoadable,
   cleanPath,
   emptyObject,
+  hasProperty,
 } from './utils';
 
 // ensure we're using the exact code for default root match
@@ -120,7 +121,9 @@ export default async function loadInitialProps(routes, pathname, ctx) {
     ? {
         ...ctx,
         query: ctx.req.query,
-        params: isEmpty(lastBranch.match) ? lastBranch.match.path : emptyObject,
+        params: hasProperty(lastBranch.match, 'params')
+          ? lastBranch.match.params
+          : emptyObject,
       }
     : ctx;
   /* eslint-enable */

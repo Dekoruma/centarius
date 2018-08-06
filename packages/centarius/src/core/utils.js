@@ -13,6 +13,18 @@ export function cleanPath(_path) {
 }
 
 /**
+ * Taken from lodash's has function
+ * https://github.com/lodash/lodash/blob/master/last.js
+ *
+ * MIT License
+ */
+
+const { hasOwnProperty } = Object.prototype;
+
+export const hasProperty = (object, key) =>
+  object != null && hasOwnProperty.call(object, key);
+
+/**
  * Taken from lodash's last function with some changes
  * https://github.com/lodash/lodash/blob/master/last.js
  *
@@ -20,7 +32,7 @@ export function cleanPath(_path) {
  */
 export const last = (array) => {
   const length = array == null ? 0 : array.length;
-  return length ? array[length - 1] : null;
+  return length ? array[length - 1] : {};
 };
 
 export const isFunction = (obj) => typeof obj === 'function';
