@@ -1,7 +1,7 @@
 {
   "name": "basic",
   "private": true,
-  "version": "0.0.8",
+  "version": "0.0.9",
   "license": "MIT",
   "scripts": {
     "start": "razzle start",
@@ -10,8 +10,8 @@
     "start:prod": "NODE_ENV=production node build/server.js"
   },
   "dependencies": {
-    "@centarius/state-hoc": "^0.0.8",
-    "centarius": "^0.0.8",
+    "@centarius/state-hoc": "^0.0.9",
+    "centarius": "^0.0.9",
     "express": "^4.16.2",
     "raf": "^3.4.0",
     "razzle": "^2.4.0",

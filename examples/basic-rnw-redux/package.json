@@ -1,6 +1,6 @@
 {
   "name": "rnw-redux",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
     "start:prod": "NODE_ENV=production node build/server.js"
   },
   "dependencies": {
-    "centarius": "^0.0.8",
+    "centarius": "^0.0.9",
     "express": "^4.16.2",
     "modal-react-native-web": "^0.1.9",
     "prop-types": "^15.6.2",
