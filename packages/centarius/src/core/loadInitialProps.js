@@ -116,17 +116,13 @@ export default async function loadInitialProps(routes, pathname, ctx) {
 
   const lastBranch = last(branches);
 
-  /* eslint-disable */
-  const ctxModified = ctx.isServer
-    ? {
-        ...ctx,
-        query: ctx.req.query,
-        params: hasProperty(lastBranch.match, 'params')
-          ? lastBranch.match.params
-          : emptyObject,
-      }
-    : ctx;
-  /* eslint-enable */
+  const ctxModified = {
+    ...ctx,
+    query: ctx.isServer ? ctx.req.query : emptyObject,
+    params: hasProperty(lastBranch.match, 'params')
+      ? lastBranch.match.params
+      : emptyObject,
+  };
 
   const promises = branches.map(({ route }) =>
     getInitialData(route.component, ctxModified)

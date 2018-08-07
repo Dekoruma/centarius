@@ -87,7 +87,6 @@ class Centarius extends Component {
           {
             ...restProps,
             ...options,
-            params: match.params || {},
             query,
             location,
             history,
