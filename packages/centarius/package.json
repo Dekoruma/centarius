@@ -1,7 +1,7 @@
 {
   "name": "centarius",
   "version": "0.0.9",
-  "description": "React SSR Power Pack",
+  "description": "♥ Sweet React SSR for Everyone ♥",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",
   "repository": "https://github.com/rayandrews/centarius",
