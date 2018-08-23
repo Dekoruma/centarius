@@ -54,7 +54,7 @@ class Centarius extends Component {
   }
 
   /* eslint-disable camelcase,react/no-did-update-set-state,react/destructuring-assignment */
-  async componentDidUpdate(prevProps, prevState) {
+  async componentDidUpdate(_, prevState) {
     const navigated = prevState.location !== this.state.location;
 
     if (navigated) {
