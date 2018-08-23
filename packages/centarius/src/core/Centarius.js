@@ -10,12 +10,11 @@ import React, { Component } from 'react';
 import withRouter from 'react-router-dom/withRouter';
 import PropTypes from 'prop-types';
 
-import { parse } from 'qs';
 import renderRoutes from './renderRoutes';
 import loadInitialProps from './loadInitialProps';
 import getOptions from './getOptions';
 import { Provider } from './context';
-import { noop } from './utils';
+import { noop, emptyObject } from './utils';
 
 class Centarius extends Component {
   static displayName = 'Centarius';
@@ -33,7 +32,7 @@ class Centarius extends Component {
   };
 
   static defaultProps = {
-    options: getOptions(),
+    options: emptyObject,
 
     beforeNavigating: noop,
     afterNavigating: noop,
@@ -49,6 +48,8 @@ class Centarius extends Component {
       loading: false,
       error: false,
     };
+
+    this.options = getOptions(props.options);
 
     this.prefetcherCache = {};
   }
@@ -79,15 +80,12 @@ class Centarius extends Component {
           () => beforeNavigating(null, this.state)
         );
 
-        const query = parse(location.search, { ignoreQueryPrefix: true });
-
         const { data: dataProps } = await loadInitialProps(
           routes,
           this.state.location.pathname,
           {
             ...restProps,
-            ...options,
-            query,
+            ...this.options,
             location,
             history,
           }
@@ -108,9 +106,7 @@ class Centarius extends Component {
             loading: false,
             error: true,
           },
-          () => {
-            afterNavigating(null, this.state);
-          }
+          () => afterNavigating(null, this.state)
         );
       }
     }
@@ -135,7 +131,7 @@ class Centarius extends Component {
 
     try {
       const dataProps = await loadInitialProps(routes, pathname, {
-        ...options,
+        ...this.options,
         ...rest,
       });
 

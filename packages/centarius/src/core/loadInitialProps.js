@@ -119,9 +119,12 @@ export default async function loadInitialProps(routes, pathname, ctx) {
 
   const ctxModified = {
     ...ctx,
+    // eslint-disable-next-line
     query: ctx.isServer
       ? ctx.req.query
-      : parse(ctx.location.search, { ignoreQueryPrefix: true }),
+      : isEmpty(ctx.location)
+        ? emptyObject
+        : parse(ctx.location.search, { ignoreQueryPrefix: true }),
     params: hasProperty(lastBranch.match, 'params')
       ? lastBranch.match.params
       : emptyObject,
