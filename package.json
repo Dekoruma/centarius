@@ -16,7 +16,7 @@
     "lint": "prettier-eslint --write \"packages/**/*.js\"",
     "precommit": "lint-staged",
 
-    "purge:all": "yarn clean:all && rimraf node_modules",
+    "purge:all": "yarn clean:all && rm -Rf node_modules",
     "clean:all": "yarn clean:build && yarn clean:monorepo",
 
     "bootstrap": "lerna bootstrap",
@@ -67,8 +67,7 @@
   },
   "workspaces": {
     "packages": [
-      "packages/*",
-      "examples/*"
+      "packages/*"
     ],
     "nohoist": [
       "**/razzle",

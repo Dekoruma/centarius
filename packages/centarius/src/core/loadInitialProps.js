@@ -10,6 +10,7 @@ import isEmpty from 'lodash.isempty';
 
 import matchPath from 'react-router-dom/matchPath';
 import Router from 'react-router-dom/Router';
+import { parse } from 'qs';
 
 import {
   last,
@@ -118,7 +119,9 @@ export default async function loadInitialProps(routes, pathname, ctx) {
 
   const ctxModified = {
     ...ctx,
-    query: ctx.isServer ? ctx.req.query : emptyObject,
+    query: ctx.isServer
+      ? ctx.req.query
+      : parse(ctx.location.search, { ignoreQueryPrefix: true }),
     params: hasProperty(lastBranch.match, 'params')
       ? lastBranch.match.params
       : emptyObject,
