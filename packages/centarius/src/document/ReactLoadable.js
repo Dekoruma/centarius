@@ -8,9 +8,15 @@ const ReactLoadable = ({ chunks, ...rest }) => (
         key={chunk.file}
         crossOrigin="anonymous"
         type="text/javascript"
-        src={chunk.file}
+        src={
+          process.env.NODE_ENV === 'production'
+            ? `/${chunk.file}`
+            : `http://${process.env.HOST || 'localhost'}:${parseInt(
+                process.env.PORT,
+                10
+              ) + 1}/${chunk.file}`
+        }
         {...rest}
-        async
       />
     ))}
   </Fragment>
