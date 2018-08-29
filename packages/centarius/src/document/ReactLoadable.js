@@ -11,8 +11,10 @@ const ReactLoadable = ({ chunks, ...rest }) => (
         src={
           process.env.NODE_ENV === 'production'
             ? `/${chunk.file}`
-            : `http://${process.env.HOST}:${parseInt(process.env.PORT, 10) +
-                1}/${chunk.file}`
+            : `http://${process.env.HOST || 'localhost'}:${parseInt(
+                process.env.PORT,
+                10
+              ) + 1}/${chunk.file}`
         }
         {...rest}
       />
