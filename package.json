@@ -15,25 +15,20 @@
   "scripts": {
     "lint": "prettier-eslint --write \"packages/**/*.js\"",
     "precommit": "lint-staged",
-
     "purge:all": "yarn clean:all && rm -Rf node_modules",
     "clean:all": "yarn clean:build && yarn clean:monorepo",
-
     "bootstrap": "lerna bootstrap",
     "clean:monorepo": "lerna clean",
-
     "build:all": "concurrently \"npm:build-*\"",
     "watch:all": "concurrently --kill-others \"npm:watch-*\"",
     "clean:build": "rimraf \"+(packages|examples)/*/+(dist|build)\"",
-
     "build-centarius": "lerna run --stream --scope=centarius build",
     "watch-centarius": "lerna run --stream --scope=centarius build-dev",
-
     "build-state-hoc": "lerna run --stream --scope=@centarius/state-hoc build",
     "watch-state-hoc": "lerna run --stream --scope=@centarius/state-hoc build-dev",
-
     "build-react-loadable": "lerna run --stream --scope=@centarius/react-loadable build",
-    "watch-react-loadable": "lerna run --stream --scope=@centariusreact-loadable build-dev"
+    "watch-react-loadable": "lerna run --stream --scope=@centariusreact-loadable build-dev",
+    "prepare": "yarn build:all"
   },
   "dependencies": {
     "razzle": "^2.4.0",
