@@ -8,8 +8,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Switch from 'react-router/Switch';
-import Route from 'react-router/Route';
+import { Switch, Route } from 'react-router-dom';
 
 import isEmpty from 'lodash.isempty';
 
