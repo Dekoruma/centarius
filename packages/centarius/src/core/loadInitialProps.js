@@ -8,8 +8,7 @@
 
 import isEmpty from 'lodash.isempty';
 
-import matchPath from 'react-router-dom/matchPath';
-import Router from 'react-router-dom/Router';
+import { matchPath, Router } from 'react-router-dom';
 import { parse } from 'qs';
 
 import {

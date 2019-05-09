@@ -9,15 +9,14 @@
 import React from 'react';
 import { parse } from 'url';
 import ReactDOMServer from 'react-dom/server';
-import StaticRouter from 'react-router-dom/StaticRouter';
-import matchPath from 'react-router-dom/matchPath';
+import { StaticRouter, matchPath } from 'react-router-dom';
 
 import isEmpty from 'lodash.isempty';
 
 import { isPromise, initRedirect, isResSent } from '../core/utils';
 
 import getOptions from '../core/getOptions';
-import loadInitialProps, { matchRoutes } from '../core/loadInitialProps';
+import loadInitialProps from '../core/loadInitialProps';
 
 import Centarius from '../core/Centarius';
 
