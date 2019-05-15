@@ -1,6 +1,6 @@
 {
   "name": "centarius",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "♥ Sweet React SSR for Everyone ♥",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",
@@ -56,12 +56,12 @@
     "@babel/preset-env": "7.0.0-beta.55",
     "@babel/preset-react": "7.0.0-beta.55",
     "@babel/template": "7.0.0-beta.55",
-    "babel-plugin-add-module-exports": "^0.3.2",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.14",
     "@taskr/babel": "1.1.0-next.1",
     "@taskr/clear": "1.1.0",
     "@taskr/esnext": "1.1.0",
     "@taskr/watch": "1.1.0",
+    "babel-plugin-add-module-exports": "^0.3.2",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.14",
     "taskr": "1.1.0"
   },
   "peerDependencies": {
