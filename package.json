@@ -30,12 +30,6 @@
     "watch-react-loadable": "lerna run --stream --scope=@centariusreact-loadable build-dev",
     "prepare": "yarn build:all"
   },
-  "dependencies": {
-    "razzle": "^2.4.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-router-dom": "^4.3.1"
-  },
   "devDependencies": {
     "babel-eslint": "^8.2.5",
     "concurrently": "^3.5.1",

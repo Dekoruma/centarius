@@ -36,7 +36,7 @@
     "react-loadable-visibility": "^2.5.0",
     "react-native-web": "^0.8.8",
     "react-redux": "^5.0.7",
-    "react-router-dom": "^4.3.1",
+    "react-router-dom": "^5.0.0",
     "react-router-redux": "^4.0.8",
     "recompose": "^0.27.1",
     "redux": "^4.0.0",
