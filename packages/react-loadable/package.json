@@ -62,7 +62,7 @@
   "peerDependencies": {
     "prop-types": "^15.x.x",
     "react": "16.x.x",
-    "react-router-dom": "^5.x.x"
+    "react-router-dom": ">=4.0.0"
   },
   "gitHead": "66b2b4b2145306773cb7d7d6f21a0eeff4b3afc4"
 }
