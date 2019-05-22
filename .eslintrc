@@ -13,10 +13,7 @@
     "jest": true,
     "es6": true
   },
-  "plugins": [
-    "react",
-    "prettier"
-  ],
+  "plugins": ["react", "prettier"],
   "globals": {
     "graphql": false,
     "window": false,
@@ -35,38 +32,11 @@
       "classes": true
     }
   },
-  "settings": {
-    "import/resolver": {
-      "babel-module": {
-        "root": ["./src"],
-        "alias": {
-          "react-native": "react-native-web",
-          "build": "./build/",
-          "App": "./src/App",
-          "api": "./src/App/api",
-          "actions": "./src/App/actions",
-          "components": "./src/App/components",
-          "containers": "./src/App/containers",
-          "reducers": "./src/App/reducers",
-          "store": "./src/App/store"
-        }
-      }
-    }
-  },
   "rules": {
-    "arrow-parens": [
-      "error",
-      "always"
-    ],
-    "arrow-body-style": [
-      2,
-      "as-needed"
-    ],
+    "arrow-parens": ["error", "always"],
+    "arrow-body-style": [2, "as-needed"],
     "class-methods-use-this": 0,
-    "comma-dangle": [
-      2,
-      "always-multiline"
-    ],
+    "comma-dangle": [2, "always-multiline"],
     "eol-last": 0,
     "import/imports-first": 0,
     "import/newline-after-import": 0,
@@ -83,11 +53,14 @@
         "SwitchCase": 1
       }
     ],
-    "jsx-a11y/anchor-is-valid": ["error", {
-      "components": ["Link"],
-      "specialLink": ["hrefLeft", "hrefRight"],
-      "aspects": ["invalidHref", "preferButton"]
-    }],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ],
     "jsx-a11y/aria-props": 2,
     "jsx-a11y/heading-has-content": 0,
     "jsx-a11y/href-no-hash": 0,
@@ -102,28 +75,25 @@
     "no-use-before-define": 0,
     "no-unused-vars": 1,
     "prefer-template": 2,
-    "prettier/prettier": ["error", {
-      "semi": true,
-      "singleQuote": true,
-      "trailingComma": "es5",
-      "bracketSpacing": true,
-      "useTabs": false,
-      "jsxBracketSameLine": false,
-      "arrowParens": "always"
-    }],
-    "react/forbid-prop-types": 0,
-    "react/jsx-first-prop-new-line": [
-      2,
-      "multiline"
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": true,
+        "singleQuote": true,
+        "trailingComma": "es5",
+        "bracketSpacing": true,
+        "useTabs": false,
+        "jsxBracketSameLine": false,
+        "arrowParens": "always"
+      }
     ],
+    "react/forbid-prop-types": 0,
+    "react/jsx-first-prop-new-line": [2, "multiline"],
     "react/jsx-filename-extension": 0,
     "react/jsx-no-target-blank": 0,
     "react/require-default-props": 0,
     "react/require-extension": 0,
     "react/self-closing-comp": 0,
-    "semi": [
-      2,
-      "always"
-    ]
+    "semi": [2, "always"]
   }
 }

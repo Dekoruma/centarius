@@ -24,7 +24,7 @@ class Centarius extends Component {
     location: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
     routes: PropTypes.arrayOf(PropTypes.shape()).isRequired,
-    data: PropTypes.shape({}).isRequired,
+    data: PropTypes.shape({}),
     options: PropTypes.shape({}),
 
     beforeNavigating: PropTypes.func,
@@ -33,6 +33,7 @@ class Centarius extends Component {
 
   static defaultProps = {
     options: emptyObject,
+    data: null,
 
     beforeNavigating: noop,
     afterNavigating: noop,
