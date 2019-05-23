@@ -23,7 +23,8 @@ import {
 } from './utils';
 
 // ensure we're using the exact code for default root match
-const { computeMatch } = Router.prototype;
+const computeRootMatch =
+  Router.computeRootMatch || Router.prototype.computeMatch;
 
 export async function getComponent(_component, ctx) {
   let component = null;
@@ -92,7 +93,7 @@ export const matchRoutes = (
       if (branch.length) {
         match = branch[branch.length - 1].match;
       } else {
-        match = computeMatch(pathname);
+        match = computeRootMatch(pathname);
       }
     }
     /* eslint-enable */
@@ -122,8 +123,8 @@ export default async function loadInitialProps(routes, pathname, ctx) {
     query: ctx.isServer
       ? ctx.req.query
       : isEmpty(ctx.location)
-        ? emptyObject
-        : parse(ctx.location.search, { ignoreQueryPrefix: true }),
+      ? emptyObject
+      : parse(ctx.location.search, { ignoreQueryPrefix: true }),
     params: hasProperty(lastBranch.match, 'params')
       ? lastBranch.match.params
       : emptyObject,

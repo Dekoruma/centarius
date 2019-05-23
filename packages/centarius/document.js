@@ -1,1 +1,1 @@
-module.exports = require('./dist/cjs/document');
+module.exports = require('./dist/document');
