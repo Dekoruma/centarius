@@ -1,6 +1,6 @@
 {
   "name": "centarius",
-  "version": "0.1.8",
+  "version": "1.0.0",
   "description": "♥ Sweet React SSR for Everyone ♥",
   "main": "dist/index.js",
   "module": "dist/index.js",

@@ -1,6 +1,6 @@
 {
   "name": "@centarius/state-hoc",
-  "version": "0.1.8",
+  "version": "1.0.0",
   "description": "Centarius State HOC",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -36,7 +36,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "centarius": "^0.1.8",
+    "centarius": "^1.0.0",
     "hoist-non-react-statics": "^3.3.0"
   },
   "devDependencies": {
