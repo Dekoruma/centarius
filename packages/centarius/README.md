@@ -846,10 +846,11 @@ export default server;
 
 ---
 
-## Authors
+## Contributors
 
 * Ray Andrew [@rayandrews](https://github.com/rayandrews)
 * Natan Elia [@natanelia](https://github.com/natanelia)
+* David Kwan [@davidkwan95](https://github.com/davidkwan95)
 
 ---
 
