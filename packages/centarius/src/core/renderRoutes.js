@@ -16,12 +16,21 @@ import { cleanPath } from './utils';
 
 const WrapperComponent = (props) => <React.Fragment {...props} />;
 
+const getRoutePaths = (routes) =>
+  routes.reduce((paths, route) => {
+    if (typeof route.path !== 'undefined') {
+      return paths.concat(route.path);
+    }
+    return paths;
+  }, []);
+
 const Routes = ({ routes, extraProps, basePath }) => (
   <Switch>
     {routes.map((route, i) => {
       const {
         key,
         path,
+        matchChildrenPathsOnly,
         exact,
         strict,
         routerComponent: CustomRoute,
@@ -34,40 +43,52 @@ const Routes = ({ routes, extraProps, basePath }) => (
         ...rest
       } = route;
 
-      const routePath = cleanPath(`${basePath}/${path || ''}`);
+      const paths = matchChildrenPathsOnly
+        ? getRoutePaths(ChildrenRoutes)
+        : [].concat(path);
+      const routePaths = paths.map((p) => cleanPath(`${basePath}/${p || ''}`));
 
-      const routeKey = key || `route--${i}--${routePath}`;
+      const routeKey = key || `route--${i}--${routePaths[0] || ''}`;
 
+      const childrenBasePath = matchChildrenPathsOnly
+        ? basePath
+        : routePaths[0];
       const ChildrenComponent = renderRoutes(
         ChildrenRoutes,
         extraProps,
-        routePath
+        childrenBasePath
       );
 
-      /* eslint-disable no-nested-ternary */
-      const renderedComponent = (props) => (
-        <WrapperComponent>
-          {render ? (
-            render({ ...props, ...extraProps, children: ChildrenComponent })
-          ) : RouteComponent ? (
+      const renderComponent = (props) => {
+        if (render) {
+          return render({
+            ...props,
+            ...extraProps,
+            children: ChildrenComponent,
+          });
+        }
+        if (RouteComponent) {
+          return (
             <RouteComponent {...props} {...extraProps}>
               {ChildrenComponent}
             </RouteComponent>
-          ) : (
-            <React.Fragment>{ChildrenComponent}</React.Fragment>
-          )}
-        </WrapperComponent>
+          );
+        }
+        return <React.Fragment>{ChildrenComponent}</React.Fragment>;
+      };
+
+      const renderWrappedComponent = (props) => (
+        <WrapperComponent>{renderComponent(props)}</WrapperComponent>
       );
-      /* eslint-enable no-nested-ternary */
 
       if (CustomRoute) {
         return (
           <CustomRoute
             key={routeKey}
-            path={routePath}
+            path={routePaths}
             exact={exact}
             strict={strict}
-            render={renderedComponent}
+            render={renderWrappedComponent}
             {...rest}
           />
         );
@@ -76,10 +97,10 @@ const Routes = ({ routes, extraProps, basePath }) => (
       return (
         <Route
           key={routeKey}
-          path={routePath}
+          path={routePaths}
           exact={exact}
           strict={strict}
-          render={renderedComponent}
+          render={renderWrappedComponent}
           {...rest}
         />
       );
