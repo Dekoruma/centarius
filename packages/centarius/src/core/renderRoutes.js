@@ -59,7 +59,7 @@ const Routes = ({ routes, extraProps, basePath }) => (
         childrenBasePath
       );
 
-      const renderComponent = (props) => {
+      const Component = (props) => {
         if (render) {
           return render({
             ...props,
@@ -77,8 +77,10 @@ const Routes = ({ routes, extraProps, basePath }) => (
         return <React.Fragment>{ChildrenComponent}</React.Fragment>;
       };
 
-      const renderWrappedComponent = (props) => (
-        <WrapperComponent>{renderComponent(props)}</WrapperComponent>
+      const WrappedComponent = (props) => (
+        <WrapperComponent>
+          <Component {...props} />
+        </WrapperComponent>
       );
 
       if (CustomRoute) {
@@ -88,7 +90,7 @@ const Routes = ({ routes, extraProps, basePath }) => (
             path={routePaths}
             exact={exact}
             strict={strict}
-            render={renderWrappedComponent}
+            render={WrappedComponent}
             {...rest}
           />
         );
@@ -100,7 +102,7 @@ const Routes = ({ routes, extraProps, basePath }) => (
           path={routePaths}
           exact={exact}
           strict={strict}
-          render={renderWrappedComponent}
+          render={WrappedComponent}
           {...rest}
         />
       );
