@@ -77,12 +77,24 @@ export const matchRoutes = (
   basePath = '/',
   branch = []
 ) => {
-  let routePath = basePath;
-
   routes.some((route) => {
+    let routePath = basePath;
     let match = false;
 
     /* eslint-disable */
+    if (route.matchChildrenPathsOnly) {
+      const childrenRoutesBranch = matchRoutes(
+        route.routes,
+        pathname,
+        routePath
+      );
+      const lastBranch = last(childrenRoutesBranch);
+      if (lastBranch.match) {
+        branch.push(lastBranch);
+      }
+      return lastBranch.match;
+    }
+
     if (route.path) {
       routePath = cleanPath(`${basePath}/${route.path || ''}`);
       match = matchPath(pathname, {
