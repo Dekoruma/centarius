@@ -31,7 +31,10 @@ export async function getComponent(_component, ctx) {
 
   // if loadable components, load first
   if (isLoadableComponent(_component)) {
-    const loadedComponent = await _component.load();
+    let loadedComponent = await _component.load();
+    if (loadedComponent.default) {
+      loadedComponent = loadedComponent.default;
+    }
 
     if (isWrappedComponent(loadedComponent)) {
       if (isLoadable(loadedComponent, ctx.staticMethod)) {
