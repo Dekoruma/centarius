@@ -6,7 +6,7 @@
  * With some changes by Ray Andrew (@rayandrews) <raydreww@gmail.com>
  */
 
-import isEmpty from 'lodash.isempty';
+import isEmpty from 'lodash/isEmpty';
 
 import { matchPath, Router } from 'react-router-dom';
 import { parse } from 'qs';
