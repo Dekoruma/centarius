@@ -11,7 +11,7 @@ import { parse } from 'url';
 import ReactDOMServer from 'react-dom/server';
 import { StaticRouter, matchPath } from 'react-router-dom';
 
-import isEmpty from 'lodash.isempty';
+import isEmpty from 'lodash/isEmpty';
 
 import { isPromise, initRedirect, isResSent } from '../core/utils';
 
