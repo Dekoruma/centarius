@@ -1,7 +1,9 @@
-/* eslint-disable no-underscore-dangle */
-const getSsrData = () =>
+/* eslint-disable no-eval */
+import { dataId } from '../core/constants';
+
+const getSsrData = (defaultDataId = dataId) =>
   typeof window !== 'undefined' && !!document
-    ? window.__CENTARIUS_SERVER_STATE__
+    ? eval(`(${document.getElementById(defaultDataId).textContent})`)
     : {};
 
 export default getSsrData;

@@ -2,12 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import serialize from 'serialize-javascript';
 
-const CentariusData = ({ data, ...rest }) => (
+import { dataId } from '../core/constants';
+
+const CentariusData = ({ id, data, ...rest }) => (
   <script
+    id={id}
     type="application/json"
     // eslint-disable-next-line
     dangerouslySetInnerHTML={{
-      __html: `window.__CENTARIUS_SERVER_STATE__=${serialize(data)}`,
+      __html: serialize(data),
     }}
     {...rest}
   />
@@ -15,10 +18,12 @@ const CentariusData = ({ data, ...rest }) => (
 
 CentariusData.propTypes = {
   data: PropTypes.any,
+  id: PropTypes.string,
 };
 
 CentariusData.defaultProps = {
   data: {},
+  id: dataId,
 };
 
 export default CentariusData;
