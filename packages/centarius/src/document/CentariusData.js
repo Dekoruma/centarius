@@ -6,6 +6,7 @@ import { dataId } from '../core/constants';
 
 const CentariusData = ({ id, data, ...rest }) => (
   <script
+    id={id}
     type="application/json"
     // eslint-disable-next-line
     dangerouslySetInnerHTML={{
