@@ -73,13 +73,6 @@ class Centarius extends Component {
       } = this.props;
 
       try {
-        this.setState(
-          {
-            data: undefined,
-            loading: true,
-          },
-          () => beforeNavigating(null, this.state)
-        );
 
         const { data: dataProps } = await loadInitialProps(
           routes,
@@ -117,10 +110,16 @@ class Centarius extends Component {
     const navigated = nextProps.location !== prevState.location;
 
     if (navigated) {
-      return {
+      const nextState = {
         location: nextProps.location,
         previousLocation: prevState.location,
-      };
+        data: undefined,
+        loading: true
+      }
+
+      nextProps.beforeNavigating(null, { ...prevState, ...nextState });
+
+      return nextState;
     }
 
     return null;
